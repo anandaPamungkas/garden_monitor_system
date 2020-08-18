@@ -1,0 +1,52 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.table-wrapper {
+    position: relative;
+    width: 100%;
+    padding-bottom: 3em;
+}
+
+.table-scroll {
+    height: 250px;
+    overflow: auto;
+    margin-top: 20px;
+}
+
+.table-wrapper table {
+    width: 100%;
+}
+
+.table-wrapper table thead th .text {
+    position: absolute;
+    top: -20px;
+    z-index: 2;
+    height: 20px;
+    width: 35%;
+}
+
+.search-form {
+    margin-top: 2em;
+}
+
+.page-title {
+    padding-top: 2em;
+}
+
+.page-title h3 {
+    font-weight: bold;
+}
+
+.chart-container {
+    position: relative;
+    margin: auto;
+    height: 80vh;
+    width: 80vw;
+}
+
+@media only screen and (max-width: 600px) {
+    .current-data p {
+        font-size: 0.7rem;
+    }
+}

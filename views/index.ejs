@@ -1,0 +1,56 @@
+<%- include('partials/header') %>
+    <div class="container" class="my-auto">
+        <div class="card  my-3">
+            <div class="card-header text-center text-white bg-warning">
+                <strong>Light Intensity<strong>
+            </div>
+            <div class="card-body text-secondary">
+                <div class="d-flex justify-content-center current-data">
+                    <p>Current Light Intensity :</p>
+                    <strong>
+                         <!--current light  sensor value-->
+                        <p id="light-value-element" style="margin: 0 0.3rem;" class="text-warning"></p>
+                    </strong>
+                <p>Lux</p>
+                <p style="margin: 0 0.3rem 0 1rem;">Current Time :</p>
+                <strong>
+                     <!--current time -->
+                    <p id="light-time-element" class="text-warning"></p>
+                </strong>
+            </div>
+            <div class="chart-conatiner mx-auto">
+                <!--chart holder-->
+                <canvas id="light-chart"></canvas>
+            </div>
+            <div class="d-flex justify-content-center">
+                <a href="/light/detail" class="btn btn-primary">Light Detail</a>
+            </div>
+        </div>
+    </div>
+    <div class="card  my-3">
+        <div class="card-header text-center text-white" style="background-color: #FFA07A;">
+            <strong>Soil Moisture<strong>
+        </div>
+        <div class="card-body text-secondary">
+            <div class="d-flex justify-content-center current-data">
+            <p>Current Soil Moisture :</p>
+            <strong>
+                <!--current soil moisture sensor value-->
+                <p id="moisture-value-element" style="margin: 0 0.3rem;color:#FFA07A;"></p>
+            </strong>
+            <p>%</p>
+            <p style="margin: 0 0.3rem 0 1rem;">Current Time :</p>
+            <strong>
+                <!--current time -->
+                <p id="moisture-time-element" style="color:#FFA07A;"></p>
+            </strong>
+        </div>
+        <div class="chart-conatiner mx-auto">
+            <!--chart holder-->
+            <canvas id="moisture-chart"></canvas>
+        </div>
+        <div class="d-flex justify-content-center">
+            <a href="/moisture/detail" class="btn btn-primary">Moisture Detail</a>
+        </div>
+    </div>
+    <%- include('partials/footer') %>

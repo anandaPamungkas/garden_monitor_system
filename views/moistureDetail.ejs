@@ -1,0 +1,68 @@
+<%- include('partials/header') %>
+
+    <div class="container bg-white">
+        <div class="page-title text-center">
+            <h3 class="text-primary">Soil Moisture</h3>
+        </div>
+        <div class="chart-conatiner mx-auto" style="width: 800px; display: none;">
+            <!--chart holder-->
+            <canvas id="light-chart"></canvas>
+        </div>
+
+        <div class="d-flex justify-content-center current-data">
+            <!--current soil moisture sensor value-->
+            <p>Current Soil Moisture :</p>
+            <strong>
+                <p id="moisture-value-element" style="margin: 0 0.3rem;color:#FFA07A;"></p>
+            </strong>
+            <p>%</p>
+            <!--current time -->
+            <p style="margin: 0 0.3rem 0 1rem;">Current Time :</p>
+            <strong>
+                <p id="moisture-time-element" style="color:#FFA07A;"></p>
+            </strong>
+        </div>
+        <div class="chart-conatiner mx-auto">
+            <!--chart holder-->
+            <canvas id="moisture-chart"></canvas>
+        </div>
+        <div class="d-flex justify-content-center">
+            <!--Button Turn Pump-->
+            <button class="btn btn-primary" id="pump_publish" type="submit" onClick="turnPump()">Turn On Pump</button>
+        </div>
+        <div class="d-flex justify-content-center search-form">
+            <!--Search form for sensor value table-->
+            <input class="form-control" style="width: 30em;" type="text" id="myInput" onkeyup="myFunction()" placeholder="Search Data by Date.." title="Type in a name">
+        </div>
+        <div class="table-wrapper d-flex justify-content-center">
+            <!--Sensor value from database table-->
+            <div class="table-scroll">
+                <% if (items.length > 0) {%>
+                    <table id="myTable" class="table table-striped">
+                        <thead style="background-color: #ffa07a;">
+                            <tr>
+                                <th class="text">Value</th>
+                                <th class="text">Date</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <% items.forEach((item, index) => { %>
+                                <tr>
+
+                                    <td>
+                                        <%= item.value %>
+                                    </td>
+                                    <td>
+                                        <%= item.date %>
+                                    </td>
+                                </tr>
+                                <% }) %>
+                        </tbody>
+                    </table>
+                    <% } else { %>
+                        <p class="text-center">No data found</p>
+                        <% } %>
+            </div>
+        </div>
+    </div>
+    <%- include('partials/footer') %>
